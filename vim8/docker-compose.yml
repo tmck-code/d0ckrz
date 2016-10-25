@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  base:
+    build: .
+    image: vim8:base
+  plus:
+    build:
+      context: .
+      dockerfile: Dockerfile.plugins
+    depends_on:
+      - base
